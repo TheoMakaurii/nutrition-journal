@@ -1,0 +1,28 @@
+
+.formContainer{
+    display: flex;
+    justify-content: center;
+    background-color: thistle;
+    padding: 14px;
+}
+.submitBox{
+    font-size: 35px;
+    border: slateblue 3px solid;
+    background-color: skyblue;
+    padding: 7px;
+    width: 56%;
+    align-self: center;
+    
+}
+
+.submitBox input{
+    
+    border: 3px yellow solid;
+    margin: 7px;
+    padding: 14px;
+}
+
+.submitBox button{
+    padding: 17px;
+    margin: 14px;
+}

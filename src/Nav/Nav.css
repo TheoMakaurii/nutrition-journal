@@ -1,0 +1,13 @@
+.NavList{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+    border: thistle 3px solid;
+    
+}
+
+Nav a{
+    text-decoration: none;
+    
+}

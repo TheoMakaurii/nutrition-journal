@@ -8,7 +8,7 @@ export default function LogIn() {
                 <input type="text" id="username" name="username"required/> 
                 <label htmlFor="username"> Username </label>
                 <br/>
-                <input type="text" id="password" name="password"required/> 
+                <input type="password" id="password" name="password"required/> 
                 <label htmlFor="password"> Password </label>   
                 <br/>         
                 <button type="submit" id="submit-button">SUBMIT</button>

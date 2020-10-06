@@ -8,7 +8,7 @@ export default function LogIn() {
                 <input type="text" id="username" name="username"required/> 
                 <label htmlFor="username"> Username </label>
                 <br/>
-                <input type="text" id="password" name="password"required/> 
+                <input type="password" id="password" name="password"required/> 
                 <label htmlFor="password"> Password </label>   
                 <br/>    
                 <h4> Next we need to think of your nutrition goals? If your already have some numbers in mind, GREAT! If not don't worry about it. Put in what feels right, and then consult with a health specialist to come up with more concrete goals. We can always adjust these numbers later!</h4>
