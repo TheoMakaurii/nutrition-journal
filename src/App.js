@@ -6,6 +6,7 @@ import Login from './LogIn';
 import Nav from './Nav/Nav'
 import LogMeal from './LogMeal/LogMeal'
 import config from './config'
+import ApiContext from './ApiContext'
 //import ApiContext from './ApiContext'
 
 
@@ -76,6 +77,7 @@ export default class App extends Component {
 // }
 
   render(){
+
     let stateMeals = this.state.meals
     let Meals = stateMeals.map((el)=>
     <ul key= {el.id}>
@@ -91,10 +93,15 @@ export default class App extends Component {
         
     )
     
+    const value ={
+      meals: this.state.meals,
+      setMeals: this.setMeals,
+    }
 
     return (
 
     <div  className='App'>
+      <ApiContext.Provider value={value}>
       <header>
           <h1>Let's eat!</h1>
       </header>
@@ -118,6 +125,7 @@ export default class App extends Component {
       <footer>
         <p> Developed by Theodore McCauley</p>
       </footer>
+      </ApiContext.Provider>
     </div>
  
   )

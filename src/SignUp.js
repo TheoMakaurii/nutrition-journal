@@ -1,15 +1,71 @@
-import React from 'react';
+import React, { Component } from 'react'
+import { Button, Input, Required } from './Utils/Utils'
 
-export default function LogIn() {
+export default class RegistrationForm extends Component {
+
+    static defaultProps = {
+        onRegistrationSuccess: () => {}
+    }
+
+    state = { error: null }
+
+    handleSubmit = ev => {
+        ev.preventDefault()
+        const { full_name, user_name, password } = ev.target
+    
+        console.log('registration form submitted')
+        console.log({ full_name, user_name, password })
+    
+        full_name.value = ''
+        user_name.value = ''
+        password.value = ''
+        this.props.onRegistrationSuccess()
+      }
+
+
+    render(){
+        const { error } = this.state
     return (
       <main className='SignUp'>
         <h4>Signing up is easy! Take a minute to think up a unique username and password combo and you should be good to go!</h4>
-            <form className="options"> 
-                <input type="text" id="username" name="username"required/> 
-                <label htmlFor="username"> Username </label>
+        <form className='RegistrationForm' onSubmit={this.handleSubmit}>
+            <div role='alert'>
+                {error && <p className='red'>{error}</p>}
+            </div>
+
+            <div className='full_name'>
+            <label htmlFor='RegistrationForm__full_name'/>
+        
+            <Input
+                name='full_name'
+                placeholder= 'full name'
+                type='text'
+                required
+                id='RegistrationForm__full_name'>
+            </Input>
+            </div>
+            <br/>   
+            <div className='user_name'>
+                <label htmlFor='RegistrationForm__user_name'/>
+                <Input
+                    name='user_name'
+                    placeholder= 'User Name'
+                    type='text'
+                    required
+                    id='RegistrationForm__user_name'>
+                </Input>
+            </div>
                 <br/>
-                <input type="password" id="password" name="password"required/> 
-                <label htmlFor="password"> Password </label>   
+            <div className='password'>
+                <label htmlFor='RegistrationForm__password'/>
+                <Input
+                    name='password'
+                    placeholder='Password'
+                    type='password'
+                    required
+                    id='RegistrationForm__password'>
+                </Input>
+            </div> 
                 <br/>    
                 <h4> Next we need to think of your nutrition goals? If your already have some numbers in mind, GREAT! If not don't worry about it. Put in what feels right, and then consult with a health specialist to come up with more concrete goals. We can always adjust these numbers later!</h4>
     
@@ -32,3 +88,4 @@ export default function LogIn() {
       </main>
     );
   }
+}

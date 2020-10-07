@@ -1,11 +1,12 @@
 import React from 'react';
 import config from '../config'
-import { Redirect } from 'react-router-dom'
+// import MealsApiService from '../Services/MealsAPIService'
+import ApiContext from '../ApiContext'
 import './LogMeal.css'
 
 export default class LogMeal extends React.Component{
 
-    state={redirect: null}
+    static contextType = ApiContext;
 
       submitMeal=(mn, cal, f, c, p)=>{
 
@@ -30,7 +31,7 @@ export default class LogMeal extends React.Component{
             return res.json();
         })
         .then(meal =>{
-            this.props.setMeals(meal)
+            this.context.setMeals(meal)
         })
         .catch(error=>{
             console.log({error});
@@ -51,9 +52,7 @@ export default class LogMeal extends React.Component{
     
 
     render(){
-        // if(this.state.redirect){
-        //     return<Redirect to={this.state.redirect} />
-        //   }
+
 
         return(
             <div className= "formContainer">
