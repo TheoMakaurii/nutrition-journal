@@ -1,10 +1,12 @@
 import React from 'react';
 import config from '../config'
+import { Redirect } from 'react-router-dom'
 import './LogMeal.css'
 
 export default class LogMeal extends React.Component{
 
-    
+    state={redirect: null}
+
       submitMeal=(mn, cal, f, c, p)=>{
 
        let newMeal = JSON.stringify({
@@ -27,10 +29,8 @@ export default class LogMeal extends React.Component{
             }
             return res.json();
         })
-        .then((meals)=>{
-              
-            this.props.setMeals(meals)
-            
+        .then(meal =>{
+            this.props.setMeals(meal)
         })
         .catch(error=>{
             console.log({error});
@@ -46,12 +46,15 @@ export default class LogMeal extends React.Component{
         let p =e.target.Protiens.value
         e.preventDefault()
         this.submitMeal(mn, cal, f, c, p)
-        // this.props.history.push(`/`)
+        this.props.history.push('/')
     }
     
 
     render(){
-        
+        // if(this.state.redirect){
+        //     return<Redirect to={this.state.redirect} />
+        //   }
+
         return(
             <div className= "formContainer">
                 <form onSubmit={this.onSubmit} className="submitBox">

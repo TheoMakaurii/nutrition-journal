@@ -8,7 +8,7 @@ export default function Meal(props) {
           <div className="meal_name">
 
                 {props.Meal}
-    
+          
           </div>
         </div>      
       </div>
