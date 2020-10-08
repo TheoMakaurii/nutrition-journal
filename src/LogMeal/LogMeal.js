@@ -3,6 +3,8 @@ import config from '../config'
 // import MealsApiService from '../Services/MealsAPIService'
 import ApiContext from '../ApiContext'
 import './LogMeal.css'
+import TokenService from '../Services/TokenServices';
+
 
 export default class LogMeal extends React.Component{
 
@@ -21,7 +23,8 @@ export default class LogMeal extends React.Component{
 
        fetch(`${config.API_ENDPOINT}meals`,{
            method: "POST",
-           headers: {"Content-Type": "application/json"},
+           headers: {"Content-Type": "application/json",
+                        'Authorization':`basic ${TokenService.getAuthToken()}`},
            body: newMeal
        })
         .then(res =>{

@@ -7,7 +7,7 @@ export default function Nav(){
 
         
         <ul className= "NavList">
-           <li> <Link to='/' > Home </Link> </li>
+           <li> <Link to='/HomePage' > Home </Link> </li>
            <li> <Link to='/Login'> Login </Link> </li>
            <li> <Link to='/SignUp'> Sign Up </Link> </li>
            <li> <Link to='/LogMeal'> Log A New Meal</Link> </li>

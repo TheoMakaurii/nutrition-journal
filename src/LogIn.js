@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import TokenService from './Services/TokenServices';
 
 export default class LoginForm extends Component {
 
@@ -13,8 +14,10 @@ export default class LoginForm extends Component {
         const { user_name, password } = ev.target
     
         console.log('login form submitted')
-        console.log({ user_name, password })
-    
+        console.log(user_name.value, password.value)
+        TokenService.saveAuthToken(
+        TokenService.makeBasicAuthToken(user_name.value, password.value)
+        )
         user_name.value = ''
         password.value = ''
         this.props.onLoginSuccess()

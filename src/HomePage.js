@@ -1,15 +1,10 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom'
-import MealList from './MealList'
 import Meal from './Meal/Meal'
 //import ApiContext from './ApiContext'
-import config from './config'
+
 
 export default class HomePage extends Component {
-
-
-    
-
   
     render(){
 

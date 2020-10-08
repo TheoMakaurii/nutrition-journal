@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Input, Required } from './Utils/Utils'
+import { Input} from './Utils/Utils'
 
 export default class RegistrationForm extends Component {
 
