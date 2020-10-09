@@ -1,14 +1,14 @@
 import React from 'react';
-import config from '../config'
+// import config from '../config'
 // import MealsApiService from '../Services/MealsAPIService'
-import ApiContext from '../ApiContext'
 import './LogMeal.css'
-import TokenService from '../Services/TokenServices';
+import MealsApiService from '../Services/MealsAPIService'
+// import TokenService from '../Services/TokenServices';
 
 
 export default class LogMeal extends React.Component{
 
-    static contextType = ApiContext;
+   
 
       submitMeal=(mn, cal, f, c, p)=>{
 
@@ -20,25 +20,7 @@ export default class LogMeal extends React.Component{
            protiens: p,
        })
        let error;
-
-       fetch(`${config.API_ENDPOINT}meals`,{
-           method: "POST",
-           headers: {"Content-Type": "application/json",
-                        'Authorization':`basic ${TokenService.getAuthToken()}`},
-           body: newMeal
-       })
-        .then(res =>{
-            if(!res.ok){
-                error= {code: res.status};
-            }
-            return res.json();
-        })
-        .then(meal =>{
-            this.context.setMeals(meal)
-        })
-        .catch(error=>{
-            console.log({error});
-        })
+       MealsApiService.postMeal(this.props.setMeals, newMeal, error)
        
       }
 

@@ -1,19 +1,26 @@
 .Meal {
-    border: 1px black solid;
-    background-color:skyblue;
+    border: 3px black solid;
+    background-color:limegreen;
+    border-radius: 0%;
     list-style: none;
     font-size: larger;
     margin-top: 14px;
+    margin-left: 21px;
+    margin-right: 21px;
     font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: bolder;
    
 }
 .Meal ul{
     border: 3px thistle solid;
+    border-radius: 35%;
     list-style: none;
-    font-size: 28px;
-    width: 50%;
+    font-size: 27px;
+    width: 70%;
     margin-left: 28px;
-    padding-top: 7px;
+    padding-top: 17px;
+    padding-left: 47px;
 }
 
 .Meal li{

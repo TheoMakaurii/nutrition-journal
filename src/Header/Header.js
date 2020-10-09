@@ -1,20 +1,21 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import TokenService from '../Services/TokenServices'
-import './Nav.css'
+import './Header.css'
 
-export default class Nav extends Component {
+ class Header extends Component {
     handleLogoutClick = () => {
         TokenService.clearAuthToken()
+        this.props.history.push('/')
     }
 renderLogoutLink() {
     return (
         <div className='Header__logged-in'>
-          <Link
+          <button
             onClick={this.handleLogoutClick}
-            to='/'>
+            >
             Logout
-          </Link>
+          </button>
         </div>
       )
     }
@@ -36,18 +37,22 @@ renderLogoutLink() {
       }
  
  render(){
+  
     return( 
-    <> 
+  
+    <div className= "Header">
+      <Link to='/' > <h1>Let's eat!</h1> </Link>
 
-     
-        <ul className= "NavList">
-           <li> <Link to='/HomePage' > Home </Link> </li>
+          {
+            TokenService.hasAuthToken()
+              ? this.renderLogoutLink()
+              : this.renderLoginLink()
+          }
 
-           <li> <Link to='/LogMeal'> Log A New Meal</Link> </li>
-        </ul>
-
-
-    </>
+    </div>
     )
 }
 }
+
+
+export default withRouter(Header)

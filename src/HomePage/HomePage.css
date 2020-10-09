@@ -1,0 +1,22 @@
+
+
+button{
+    background-color: slategray;
+    color: white;
+    border-radius: 14%;
+}
+
+button a {
+    color:white;
+    text-decoration: none;
+}
+
+.button-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.greeting-box{
+    margin-left: 21px;
+}

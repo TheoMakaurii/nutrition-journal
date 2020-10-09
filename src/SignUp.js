@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Input} from './Utils/Utils'
+import AuthApiService from './Services/auth-api-services'
 
 export default class RegistrationForm extends Component {
 
@@ -11,15 +12,30 @@ export default class RegistrationForm extends Component {
 
     handleSubmit = ev => {
         ev.preventDefault()
-        const { full_name, user_name, password } = ev.target
+        const { full_name, user_name, password, calories, fats, carbs, protiens } = ev.target
     
         console.log('registration form submitted')
         console.log({ full_name, user_name, password })
-    
-        full_name.value = ''
-        user_name.value = ''
-        password.value = ''
-        this.props.onRegistrationSuccess()
+
+        this.setState({erro:null})
+        AuthApiService.postUser({
+            full_name: full_name.value,
+            user_name: user_name.value,
+            password: password.value,
+            // calories: calories.value,
+            // fats: fats.value,
+            // carbs: carbs.value,
+            // protiens: protiens.value,
+        })
+        .then(user => {
+            full_name.value = ''
+            user_name.value = ''
+            password.value = ''
+            this.props.onRegistrationSuccess()
+          })
+        //   .catch(res => {
+        //     this.setState({ error: res.error })
+        //   })
       }
 
 
@@ -69,9 +85,9 @@ export default class RegistrationForm extends Component {
                 <br/>    
                 <h4> Next we need to think of your nutrition goals? If your already have some numbers in mind, GREAT! If not don't worry about it. Put in what feels right, and then consult with a health specialist to come up with more concrete goals. We can always adjust these numbers later!</h4>
     
-                <p>How many...</p>
+                {/* <p>How many...</p>
                 <label htmlFor="calories"/>
-                <input type="number" id="calories" name="calories" placeholder="Calories?" required/>    
+                <input type="number" id="calories" name='calories' placeholder="Calories?" required/>    
                 <br/>
                 <label htmlFor="fats"/>
                 <input type="number" id="fats" name="fats" placeholder="Fats" required/>     
@@ -81,7 +97,7 @@ export default class RegistrationForm extends Component {
                 <br/>
                 <label htmlFor="protiens"/>
                 <input type="number" id="protiens" name="protiens" placeholder="Protiens?" required/> 
-                <br/>
+                <br/> */}
 
                 <button type="submit" id="submit-button">SUBMIT</button>
             </form>

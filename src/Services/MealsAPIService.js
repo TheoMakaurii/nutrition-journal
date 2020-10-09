@@ -1,45 +1,45 @@
 import config from '../config'
-import ApiContext from '../ApiContext'
-
+import TokenService from '../Services/TokenServices'
+// import AuthApiServices from './auth-api-services'
 
 
 const MealsApiService = {
 
 
-getAllMeals(){
-   return fetch(`${config.API_ENDPOINT}meals`)
-    .then((results) => {
-        if (!results.ok)
-            return results.json().then(e => Promise.reject(e));
+getYourMeals(getMeals){
+    let user_id=  window.localStorage.getItem(config.USER_ID)
 
-        return results.json();
-      
-    })
-    .then((meals)=>{
-      
-        this.ApiContext.getMeals(meals)
-        console.log("meals", this.state.meals)
-    })
-    .catch(error => {
-        console.error({error});
-    });
-},
+   return fetch(`${config.API_ENDPOINT}meals/${user_id}`,  {  
+   
+        headers: {
+           'authorization': `bearer ${TokenService.getAuthToken()}`,
+               },
+              })
+      .then((results) => {
+          if (!results.ok)
+              return results.json().then(e => Promise.reject(e));
+  
+          return results.json();
+        
+      })
+      .then((meals)=>{
+        
+          getMeals(meals)
+          
+          
+      })
+      .catch(error => {
+          console.error({error});
+      });
+  },
 
 
-submitMeal(mn, cal, f, c, p){
-
-    let newMeal = JSON.stringify({
-        meal_title: mn,
-        calories: cal,
-        fats: f,
-        carbs: c,
-        protiens: p,
-    })
-    let error;
+postMeal(setMeals, newMeal, error){
 
    return fetch(`${config.API_ENDPOINT}meals`,{
         method: "POST",
-        headers: {"Content-Type": "application/json"},
+        headers: {"Content-Type": "application/json",
+                     'Authorization':`bearer ${TokenService.getAuthToken()}`},
         body: newMeal
     })
      .then(res =>{
@@ -49,14 +49,14 @@ submitMeal(mn, cal, f, c, p){
          return res.json();
      })
      .then(meal =>{
-         ApiContext.setMeals(meal)
+         setMeals(meal)
      })
      .catch(error=>{
          console.log({error});
      })
-     
-   }
+    
    
+}
 }
 
 export default MealsApiService

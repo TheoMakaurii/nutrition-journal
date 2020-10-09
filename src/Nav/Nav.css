@@ -3,11 +3,15 @@
     flex-direction: row;
     justify-content: space-around;
     list-style: none;
-    border: thistle 3px solid;
+    border: black 3px solid;
+    background-color: limegreen;
     
 }
 
 Nav a{
     text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 21px;
     
 }

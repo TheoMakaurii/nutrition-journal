@@ -2,13 +2,13 @@
 .formContainer{
     display: flex;
     justify-content: center;
-    background-color: thistle;
+    background-color: lightcyan;
     padding: 14px;
 }
 .submitBox{
     font-size: 35px;
-    border: slateblue 3px solid;
-    background-color: skyblue;
+    border: black 3px solid;
+    background-color: limegreen;
     padding: 7px;
     width: 56%;
     align-self: center;
