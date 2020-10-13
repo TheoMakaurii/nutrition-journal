@@ -1,4 +1,5 @@
 import React from 'react'
+// import MealsApiService from '../Services'
 import './Meal.css'
 
 export default function Meal(props) {
@@ -6,8 +7,7 @@ export default function Meal(props) {
       <div className="Meal">
         <div className="meal_item">
           <div className="meal_name">
-
-                {props.Meal}
+                {props.meals}
           
           </div>
         </div>      

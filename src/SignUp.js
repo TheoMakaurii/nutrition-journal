@@ -22,10 +22,10 @@ export default class RegistrationForm extends Component {
             full_name: full_name.value,
             user_name: user_name.value,
             password: password.value,
-            // calories: calories.value,
-            // fats: fats.value,
-            // carbs: carbs.value,
-            // protiens: protiens.value,
+            calories: calories.value,
+            fats: fats.value,
+            carbs: carbs.value,
+            protiens: protiens.value,
         })
         .then(user => {
             full_name.value = ''
@@ -85,7 +85,7 @@ export default class RegistrationForm extends Component {
                 <br/>    
                 <h4> Next we need to think of your nutrition goals? If your already have some numbers in mind, GREAT! If not don't worry about it. Put in what feels right, and then consult with a health specialist to come up with more concrete goals. We can always adjust these numbers later!</h4>
     
-                {/* <p>How many...</p>
+                <p>How many...</p>
                 <label htmlFor="calories"/>
                 <input type="number" id="calories" name='calories' placeholder="Calories?" required/>    
                 <br/>
@@ -97,7 +97,7 @@ export default class RegistrationForm extends Component {
                 <br/>
                 <label htmlFor="protiens"/>
                 <input type="number" id="protiens" name="protiens" placeholder="Protiens?" required/> 
-                <br/> */}
+                <br/>
 
                 <button type="submit" id="submit-button">SUBMIT</button>
             </form>

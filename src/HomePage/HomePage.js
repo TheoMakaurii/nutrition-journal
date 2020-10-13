@@ -7,10 +7,17 @@ import './HomePage.css'
 
 
 export default class HomePage extends Component {
-  
-    render(){
-      MealsApiService.getYourMeals(this.props.getMeals)
-    return (
+//   componentDidMount() {
+   
+//     setInterval(
+//     MealsApiService.getYourMeals(this.props.getMeals), 5000 
+//     )
+
+// }    
+
+  render(){
+      
+      return (
         
       <main className='HomePage'>
         <div className ="greeting-box">
@@ -21,7 +28,7 @@ export default class HomePage extends Component {
             <button><Link to='/LogMeal'> Log A New Meal!!</Link></button>
             <button type="button" id="pantry">Your Pantry</button>
         </div>
-            <Meal Meal= {this.props.Meals}/>
+            <Meal meals= {this.props.meals} setMeals={this.props.setMeals}/>
       </main>
 
     );

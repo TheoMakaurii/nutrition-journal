@@ -8,10 +8,10 @@ import Header from './Header/Header'
 import Nav from './Nav/Nav'
 import LogMeal from './LogMeal/LogMeal'
 import config from './config'
-import ApiContext from './ApiContext'
+// import ApiContext from './ApiContext'
 
 import MealsApiService from './Services/MealsAPIService'
-// import TokenService from './Services/TokenServices'
+import TokenService from './Services/TokenServices'
 import PublicRoute from './Utils/PublicOnly'
 import PrivateRoute from './Utils/PrivateOnly'
 
@@ -27,7 +27,7 @@ export default class App extends Component {
 
   getMeals =meals =>{
     this.setState({
-      meals,
+      meals
     })
   }
 
@@ -38,22 +38,22 @@ export default class App extends Component {
     }) 
   }
 
+  deleteMeal = meal => {
+    
+    console.log(meal)
+    // this.setState({
+    //     meals: this.state.meals.filter(el => el.id !== meal)
+    // });
+};
 
-
-  componentDidMount() {
-   
-    MealsApiService.getYourMeals(this.getMeals)
-}    
-
-// handleClickDelete = e => {
+// handleClickDelete= e => {
 //   e.preventDefault()
-//   const mealId = this.props.id
-  
+//   let mealId = this.state.meals.id
+//   console.log(mealId)
 //   fetch(`${config.API_ENDPOINT}meals/${mealId}`, {
 //     method: 'DELETE',
-//     headers: {
-//       'content-type': 'application/json'
-//     },
+//     headers: {"Content-Type": "application/json",
+//     'Authorization':`bearer ${TokenService.getAuthToken()}`},
 //   })
 //     .then(res => {
 //       if (!res.ok)
@@ -61,21 +61,29 @@ export default class App extends Component {
 //       return res.json()
 //     })
 //     .then(() => {
-//       this.deleteNote(mealId)
-//       // allow parent to perform extra behaviour
-//       this.props.onDeleteNote(mealId)
+//       this.deleteMeal(mealId)
+ 
 //     })
 //     .catch(error => {
 //       console.error({ error })
 //     })
 // }
 
-  render(){
+  componentDidMount() {
 
+    MealsApiService.getYourMeals(this.getMeals)
+
+
+}    
+
+
+  render(){
+    
     let stateMeals = this.state.meals
-    let Meals = stateMeals.map((el)=>
+    let meals = stateMeals.map((el)=>
     <ul key= {el.id}>
-      {/* <button type="button" className="deleteButton" onClick={this.handleClickDelete}>X</button> */}
+          {/* <button type="button"  className="deleteButton" onClick={this.handleClickDelete}>X</button> */}
+
       <li>{el.meal_title}</li>
       <br/>
       <li>Calories: {el.calories}</li>
@@ -83,19 +91,15 @@ export default class App extends Component {
       <li>Carbs: {el.carbs}</li>
       <li>Protien: {el.protiens}</li>
       <br/>
+      {/* <p>{el.date_published}</p> */}
     </ul>
         
     )
-    
-    const value ={
-      meals: this.state.meals,
-      setMeals: this.setMeals,
-    }
-
+    console.log(meals)
     return (
 
     <div  className='App'>
-      <ApiContext.Provider value={value}>
+  
       <header>
           <Header/>
       </header>
@@ -111,17 +115,17 @@ export default class App extends Component {
         <PublicRoute exact path='/' component ={Welcome}/>
 
         <PrivateRoute  path='/homepage' component ={(props)=> 
-        (<HomePage {...props} Meals={Meals} getMeals={this.getMeals}/>)} />
+        (<HomePage {...props} meals={meals} getMeals={this.getMeals}/>)} />
 
         <PrivateRoute path='/logmeal' component ={(props) =>
-        (<LogMeal {...props} setMeals={this.setMeals}/>)}/>
+        (<LogMeal {...props} setMeals={this.setMeals} getMeals={this.getMeals}/>)}/>
         
     
       </main>
       <footer>
         <p> Developed by Theodore McCauley</p>
       </footer>
-      </ApiContext.Provider>
+
     </div>
  
   )
