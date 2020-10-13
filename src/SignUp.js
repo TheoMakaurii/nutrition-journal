@@ -84,7 +84,7 @@ export default class RegistrationForm extends Component {
             </div> 
                 <br/>    
                 <h4> Next we need to think of your nutrition goals? If your already have some numbers in mind, GREAT! If not don't worry about it. Put in what feels right, and then consult with a health specialist to come up with more concrete goals. We can always adjust these numbers later!</h4>
-    
+{/*     
                 <p>How many...</p>
                 <label htmlFor="calories"/>
                 <input type="number" id="calories" name='calories' placeholder="Calories?" required/>    
@@ -97,7 +97,7 @@ export default class RegistrationForm extends Component {
                 <br/>
                 <label htmlFor="protiens"/>
                 <input type="number" id="protiens" name="protiens" placeholder="Protiens?" required/> 
-                <br/>
+                <br/> */}
 
                 <button type="submit" id="submit-button">SUBMIT</button>
             </form>
