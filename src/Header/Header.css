@@ -5,6 +5,7 @@ body{
 .Header a{
    
     color: white;
+    text-shadow: 3px 3px 0 #000;
     text-decoration: none;
 }
 

@@ -58,6 +58,26 @@ postMeal(setMeals, newMeal, error){
    
 },
 
+handleClickDelete( mealId){
+
+//   console.log(mealId)
+  fetch(`${config.API_ENDPOINT}meals/${mealId}`, {
+    method: 'DELETE',
+    headers: {"Content-Type": "application/json",
+    'Authorization':`bearer ${TokenService.getAuthToken()}`},
+  })
+    .then(res => {
+      if (!res.ok)
+        return res.json().then(e => Promise.reject(e))
+      return res.json()
+    })
+
+    .catch(error => {
+      console.error({ error })
+    })
+},
+  
+
 
 }
 

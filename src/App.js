@@ -38,51 +38,35 @@ export default class App extends Component {
     }) 
   }
 
-  deleteMeal = meal => {
+//   deleteMeal = meal => {
     
-    console.log(meal)
-    // this.setState({
-    //     meals: this.state.meals.filter(el => el.id !== meal)
-    // });
-};
-
-// handleClickDelete= e => {
-//   e.preventDefault()
-//   let mealId = this.state.meals.id
-//   console.log(mealId)
-//   fetch(`${config.API_ENDPOINT}meals/${mealId}`, {
-//     method: 'DELETE',
-//     headers: {"Content-Type": "application/json",
-//     'Authorization':`bearer ${TokenService.getAuthToken()}`},
-//   })
-//     .then(res => {
-//       if (!res.ok)
-//         return res.json().then(e => Promise.reject(e))
-//       return res.json()
-//     })
-//     .then(() => {
-//       this.deleteMeal(mealId)
- 
-//     })
-//     .catch(error => {
-//       console.error({ error })
-//     })
-// }
-
-  componentDidMount() {
-
-    MealsApiService.getYourMeals(this.getMeals)
+//     console.log("meal")
+//     this.setState({
+//         meals: this.state.meals.filter(el => el.id !== meal)
+//     });
+// };
 
 
-}    
+onClick=e=>{
+  e.preventDefault()
+  let mealId = e.target.id
+  console.log("mealId", mealId)
+  MealsApiService.handleClickDelete(mealId)
+}
+// componentDidMount() {
+
+//   MealsApiService.getYourMeals(this.getMeals)
+
+
+// }  
 
 
   render(){
     
     let stateMeals = this.state.meals
     let meals = stateMeals.map((el)=>
-    <ul key= {el.id}>
-          {/* <button type="button"  className="deleteButton" onClick={this.handleClickDelete}>X</button> */}
+    <ul key= {el.id} className="mealItem">
+          <button type="button"  className="deleteButton" onClick={this.onClick}> <span id={el.id} role="img" aria-label="delete">🗑️</span></button>
 
       <li>{el.meal_title}</li>
       <br/>
@@ -95,7 +79,7 @@ export default class App extends Component {
     </ul>
         
     )
-    console.log(meals)
+   
     return (
 
     <div  className='App'>

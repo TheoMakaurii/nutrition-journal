@@ -20,3 +20,12 @@ button a {
 .greeting-box{
     margin-left: 21px;
 }
+
+.deleteButton{
+    float: right;
+    margin-top: 14px;
+    margin-right: 56px;
+    background-color: transparent;
+    border-radius: 43%;
+    font-size: 21px;
+}
