@@ -12,8 +12,8 @@ export default class RegistrationForm extends Component {
 
     handleSubmit = ev => {
         ev.preventDefault()
-        const { full_name, user_name, password, calories, fats, carbs, protiens } = ev.target
-    
+        const { full_name, user_name, password,  } = ev.target
+    //calories, fats, carbs, protiens
         console.log('registration form submitted')
         console.log({ full_name, user_name, password })
 
@@ -22,10 +22,10 @@ export default class RegistrationForm extends Component {
             full_name: full_name.value,
             user_name: user_name.value,
             password: password.value,
-            calories: calories.value,
-            fats: fats.value,
-            carbs: carbs.value,
-            protiens: protiens.value,
+            // calories: calories.value,
+            // fats: fats.value,
+            // carbs: carbs.value,
+            // protiens: protiens.value,
         })
         .then(user => {
             full_name.value = ''

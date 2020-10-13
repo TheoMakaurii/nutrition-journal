@@ -20,9 +20,18 @@
     border: 3px yellow solid;
     margin: 7px;
     padding: 14px;
+    width: 70%;
 }
-
 .submitBox button{
     padding: 17px;
     margin: 14px;
 }
+
+.submitBox p{
+    margin-top: 10px;
+    margin-bottom: 14px;
+}
+
+@media only screen and (min-width: 600px) {
+
+  }

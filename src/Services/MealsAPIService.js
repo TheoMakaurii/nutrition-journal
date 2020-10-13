@@ -58,7 +58,7 @@ postMeal(setMeals, newMeal, error){
    
 },
 
-handleClickDelete( mealId){
+handleClickDelete(mealId){
 
 //   console.log(mealId)
   fetch(`${config.API_ENDPOINT}meals/${mealId}`, {

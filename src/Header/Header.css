@@ -2,12 +2,7 @@ body{
     background-color: lightcyan;
 }
 
-.Header a{
-   
-    color: white;
-    text-shadow: 3px 3px 0 #000;
-    text-decoration: none;
-}
+
 
 .Header {
     background-color: limegreen ;
@@ -16,4 +11,17 @@ body{
     margin-left: 14px;
     margin-right: 14px;
     border: black solid 3px;
+    font-weight: bold;
+}
+
+.Header a{
+   
+    color: white;
+   
+    text-decoration: none;
+}
+
+.Header h1{
+    text-shadow: 3px 3px 0 #000;
+    
 }

@@ -7,11 +7,11 @@ import Login from './LogIn';
 import Header from './Header/Header'
 import Nav from './Nav/Nav'
 import LogMeal from './LogMeal/LogMeal'
-import config from './config'
+//import config from './config'
 // import ApiContext from './ApiContext'
 
 import MealsApiService from './Services/MealsAPIService'
-import TokenService from './Services/TokenServices'
+
 import PublicRoute from './Utils/PublicOnly'
 import PrivateRoute from './Utils/PrivateOnly'
 
@@ -52,6 +52,7 @@ onClick=e=>{
   let mealId = e.target.id
   console.log("mealId", mealId)
   MealsApiService.handleClickDelete(mealId)
+  MealsApiService.getYourMeals(this.getMeals)
 }
 // componentDidMount() {
 

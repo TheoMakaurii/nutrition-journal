@@ -3,6 +3,7 @@ import React from 'react';
 // import MealsApiService from '../Services/MealsAPIService'
 import './LogMeal.css'
 import MealsApiService from '../Services/MealsAPIService'
+// import Meal from '../Meal/Meal';
 // import TokenService from '../Services/TokenServices';
 
 
@@ -21,6 +22,7 @@ export default class LogMeal extends React.Component{
        })
        let error;
        MealsApiService.postMeal(this.props.setMeals, newMeal, error)
+       MealsApiService.getYourMeals(this.props.getMeals)
  
       }
 
@@ -43,9 +45,9 @@ export default class LogMeal extends React.Component{
         return(
             <div className= "formContainer">
                 <form onSubmit={this.onSubmit} className="submitBox">
-                    <label>
-                    Log another meal:
-                    <br/>
+                    <label name='formLogMeal'>
+                    <p>Log another meal: </p> 
+                
                     <input type="text" name="MealName" placeholder="Meal Name"/>
                     <br/>
                     <input type="number" name="Calories" placeholder="Calories"/>
