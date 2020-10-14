@@ -32,6 +32,16 @@
     margin-bottom: 14px;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 800px){
 
-  }
+    .submitBox{
+        font-size: 35px;
+        border: black 3px solid;
+        background-color: limegreen;
+        padding: 7px;
+        width: 100%;
+        align-self: center;
+        
+    }
+    
+}

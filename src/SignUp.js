@@ -32,10 +32,11 @@ export default class RegistrationForm extends Component {
             user_name.value = ''
             password.value = ''
             this.props.onRegistrationSuccess()
+            this.props.history.push('/login')
           })
-        //   .catch(res => {
-        //     this.setState({ error: res.error })
-        //   })
+          .catch(res => {
+            this.setState({ error: res.error })
+          })
       }
 
 
@@ -83,7 +84,7 @@ export default class RegistrationForm extends Component {
                 </Input>
             </div> 
                 <br/>    
-                <h4> Next we need to think of your nutrition goals? If your already have some numbers in mind, GREAT! If not don't worry about it. Put in what feels right, and then consult with a health specialist to come up with more concrete goals. We can always adjust these numbers later!</h4>
+                {/* <h4> Next we need to think of your nutrition goals? If your already have some numbers in mind, GREAT! If not don't worry about it. Put in what feels right, and then consult with a health specialist to come up with more concrete goals. We can always adjust these numbers later!</h4> */}
 {/*     
                 <p>How many...</p>
                 <label htmlFor="calories"/>

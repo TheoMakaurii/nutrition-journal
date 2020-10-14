@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 // import { Route, Redirect } from 'react-router-dom'
 import TokenService from './Services/TokenServices';
 import AuthApiService from './Services/auth-api-services'
-
+import MealsApiService from './Services/MealsAPIService'
 
 export default class LoginForm extends Component {
 
@@ -41,6 +41,7 @@ export default class LoginForm extends Component {
            TokenService.saveAuthToken(res.authToken)
            TokenService.saveUser( res.user_id)
            this.props.onLoginSuccess()
+           MealsApiService.getYourMeals(this.props.getMeals)
            this.props.history.push('/HomePage')
          })
          .catch(res => {

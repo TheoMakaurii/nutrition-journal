@@ -72,18 +72,18 @@ componentDidMount() {
     let meals = stateMeals.map((el)=>
     <div className="mealItem" key= {el.id} >
         <button  className="deleteButton" onClick={this.onClick}> <span id={el.id} role="img" aria-label="delete">🚮</span></button>
-    <ul  className="mealItem">
+        <ul  className="mealItem">
 
-      <li>{el.meal_title}</li>
-      <br/>
-      <li>Calories: {el.calories}</li>
-      <li>Fat: {el.fats}</li>
-      <li>Carbs: {el.carbs}</li>
-      <li>Protien: {el.protiens}</li>
-      <br/>
-      {/* <p>{el.date_published}</p> */}
-    </ul>
-        </div>
+          <li>{el.meal_title}</li>
+          <br/>
+          <li>Calories: {el.calories}</li>
+          <li>Fat: {el.fats}</li>
+          <li>Carbs: {el.carbs}</li>
+          <li>Protien: {el.protiens}</li>
+          <br/>
+          {/* <p>{el.date_published}</p> */}
+        </ul>
+    </div>
     )
    
     return (
@@ -100,7 +100,8 @@ componentDidMount() {
         
         <PublicRoute path='/signup' component ={SignUp}/>
 
-        <PublicRoute path='/login' component ={Login}/>
+        <PublicRoute path='/login' component ={(props) =>
+        (<Login {...props} getMeals={this.getMeals}/>)}/>
 
         <PublicRoute exact path='/' component ={Welcome}/>
 

@@ -1,3 +1,12 @@
+main{
+       
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+    
+}
+
 .Meal {
   
     background-color:transparent;
@@ -8,22 +17,15 @@
     color: white;
     text-shadow: 1px 1px 0 #000;
     font-weight: bolder;
-    margin-left: 49px;
+    /* margin-left: 49px; */
     
    
 }
-.meal_item{
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: left;
-    
-}
+
 .meal_name{
     display: flex;
     flex-direction: column;
-    align-items: left;
-    justify-content: left;
+
     
 }
 .Meal ul{
@@ -31,12 +33,15 @@
     background-color: limegreen;
     border-radius: 40%;
     list-style: none;
-    font-size: 27px;
+    font-size: 21px;
     width: 60%;
-  
-    padding-top: 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 49px;
+   
 
-    padding-right: 47px;
+  
 }
 
 .Meal li{
@@ -51,12 +56,32 @@
     width: 28%;
     padding-right: 7px;
     border: transparent;
-    font-size: 21px;
+    font-size: 28px;
 
 }
 
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 950px) {
+ 
+    body{
+        background-color: lightcyan;
+        padding-top: 28px;
+        padding-left: 70px;
+        padding-right: 70px
+
+        
+       
+       
+    }
+
+    main{
+     
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
     .Meal {
   
         background-color:transparent;
@@ -66,7 +91,7 @@
         color: white;
         text-shadow: 1px 1px 0 #000;
         font-weight: bolder;
-        margin-left: 126px;
+        /* margin-left: 126px; */
         
        
     }
@@ -74,9 +99,19 @@
         border: 3px black solid;
         background-color: limegreen;
         list-style: none;
-        font-size: 27px;
+        font-size: 21px;
         width: 50%;
-        padding-top: 47px;
-        padding-left: 120px;
+        padding: 49px;
+        /* padding-top: 47px;
+        padding-left: 120px; */
+    }
+
+    .meal_name{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        
     }
 }
