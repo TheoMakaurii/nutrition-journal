@@ -33,41 +33,46 @@ export default class App extends Component {
 
   setMeals= meal => {
     this.setState({
-      meals:[...this.state.meals, meal],
+      meals:[meal, ...this.state.meals],
       error: null
     }) 
   }
 
-//   deleteMeal = meal => {
+  deleteMeal = meal => {
     
-//     console.log("meal")
-//     this.setState({
-//         meals: this.state.meals.filter(el => el.id !== meal)
-//     });
-// };
+    
+    this.setState({
+        meals: this.state.meals.filter(el =>{ 
+          console.log("el.id", el.id)
+          return el.id !== meal})
+    });
+};
 
 
-onClick=e=>{
-  e.preventDefault()
-  let mealId = e.target.id
-  console.log("mealId", mealId)
-  MealsApiService.handleClickDelete(mealId)
+
+componentDidMount() {
+
   MealsApiService.getYourMeals(this.getMeals)
-}
-// componentDidMount() {
 
-//   MealsApiService.getYourMeals(this.getMeals)
+  this.onClick=e=>{
+    e.preventDefault()
+    let mealId = parseInt(e.target.id)
+    console.log("mealId", parseInt(mealId))
+    
+    MealsApiService.handleClickDelete(mealId, this.deleteMeal)
 
-
-// }  
+  }
+}  
 
 
   render(){
-    
+
+
     let stateMeals = this.state.meals
     let meals = stateMeals.map((el)=>
-    <ul key= {el.id} className="mealItem">
-          <button type="button"  className="deleteButton" onClick={this.onClick}> <span id={el.id} role="img" aria-label="delete">🗑️</span></button>
+    <div className="mealItem" key= {el.id} >
+        <button  className="deleteButton" onClick={this.onClick}> <span id={el.id} role="img" aria-label="delete">🚮</span></button>
+    <ul  className="mealItem">
 
       <li>{el.meal_title}</li>
       <br/>
@@ -78,7 +83,7 @@ onClick=e=>{
       <br/>
       {/* <p>{el.date_published}</p> */}
     </ul>
-        
+        </div>
     )
    
     return (

@@ -22,7 +22,7 @@ export default class LogMeal extends React.Component{
        })
        let error;
        MealsApiService.postMeal(this.props.setMeals, newMeal, error)
-       MealsApiService.getYourMeals(this.props.getMeals)
+       
  
       }
 
@@ -34,7 +34,7 @@ export default class LogMeal extends React.Component{
         let p =e.target.Protiens.value
         e.preventDefault()
         this.submitMeal(mn, cal, f, c, p)
-     
+        MealsApiService.getYourMeals(this.props.getMeals)
         this.props.history.push('/')
     }
     

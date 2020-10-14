@@ -16,7 +16,7 @@ export default class HomePage extends Component {
 // }    
 
   render(){
-    MealsApiService.getYourMeals(this.props.getMeals)
+    // MealsApiService.getYourMeals(this.props.getMeals)
       return (
         
       <main className='HomePage'>

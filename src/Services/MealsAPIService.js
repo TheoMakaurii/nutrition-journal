@@ -58,7 +58,7 @@ postMeal(setMeals, newMeal, error){
    
 },
 
-handleClickDelete(mealId){
+handleClickDelete(mealId, deleteMeal){
 
 //   console.log(mealId)
   fetch(`${config.API_ENDPOINT}meals/${mealId}`, {
@@ -68,13 +68,13 @@ handleClickDelete(mealId){
   })
     .then(res => {
       if (!res.ok)
-        return res.json().then(e => Promise.reject(e))
-      return res.json()
+    return Promise.reject()
+    
     })
-
     .catch(error => {
       console.error({ error })
     })
+  deleteMeal(mealId)
 },
   
 
