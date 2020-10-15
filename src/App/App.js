@@ -1,19 +1,19 @@
 import React, {Component} from 'react';
 // import { Route } from 'react-router-dom';
-import Welcome from './Welcome/Welcome'
-import HomePage from './HomePage/HomePage';
-import SignUp from './SignUp';
-import Login from './LogIn';
-import Header from './Header/Header'
-import Nav from './Nav/Nav'
-import LogMeal from './LogMeal/LogMeal'
+import Welcome from '../Welcome/Welcome'
+import HomePage from '../HomePage/HomePage';
+import SignUp from '../SignUp/SignUp';
+import Login from '../Login/LogIn';
+import Header from '../Header/Header'
+import Nav from '../Nav/Nav'
+import LogMeal from '../LogMeal/LogMeal'
 //import config from './config'
 // import ApiContext from './ApiContext'
 
-import MealsApiService from './Services/MealsAPIService'
+import MealsApiService from '../Services/MealsAPIService'
 
-import PublicRoute from './Utils/PublicOnly'
-import PrivateRoute from './Utils/PrivateOnly'
+import PublicRoute from '../Utils/PublicOnly'
+import PrivateRoute from '../Utils/PrivateOnly'
 
 
 

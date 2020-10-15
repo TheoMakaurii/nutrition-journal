@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@500&family=Raleway&display=swap');
+
 .WelcomeBox{
+    font-family: 'Asap';
     padding-top: 14px;
     padding-bottom: 14px;
     padding-left: 42px;
     padding-right: 42px;
-    background-color: thistle;
+    background-color: lightgreen;
+    border: lime 1px solid;
     margin: 35px
 }

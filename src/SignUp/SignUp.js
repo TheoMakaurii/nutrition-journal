@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Input} from './Utils/Utils'
-import AuthApiService from './Services/auth-api-services'
-
+import { Input} from '../Utils/Utils'
+import AuthApiService from '../Services/auth-api-services'
+import './SignUp.css'
 export default class RegistrationForm extends Component {
 
     static defaultProps = {
@@ -51,11 +51,11 @@ export default class RegistrationForm extends Component {
             </div>
 
             <div className='full_name'>
-            <label htmlFor='RegistrationForm__full_name'/>
+            <label htmlFor='RegistrationForm__full_name'> Full Name  </label>
         
             <Input
                 name='full_name'
-                placeholder= 'full name'
+                placeholder= 'Jenny Smith'
                 type='text'
                 required
                 id='RegistrationForm__full_name'>
@@ -63,10 +63,10 @@ export default class RegistrationForm extends Component {
             </div>
             <br/>   
             <div className='user_name'>
-                <label htmlFor='RegistrationForm__user_name'/>
+                <label htmlFor='RegistrationForm__user_name'>User Name  </label>
                 <Input
                     name='user_name'
-                    placeholder= 'User Name'
+                    placeholder= 'Jenny'
                     type='text'
                     required
                     id='RegistrationForm__user_name'>
@@ -74,10 +74,10 @@ export default class RegistrationForm extends Component {
             </div>
                 <br/>
             <div className='password'>
-                <label htmlFor='RegistrationForm__password'/>
+                <label htmlFor='RegistrationForm__password'> Password  </label>
                 <Input
                     name='password'
-                    placeholder='Password'
+                    placeholder='8675309'
                     type='password'
                     required
                     id='RegistrationForm__password'>

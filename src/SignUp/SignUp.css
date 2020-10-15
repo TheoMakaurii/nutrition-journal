@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@500&family=Raleway&display=swap');
+
+.SignUp{
+    font-family: 'Asap';
+}
+.SignUp .RegistrationForm{
+    background-color: limegreen;
+    width: 50%;
+    padding: 21px;
+    border: 3px black solid;
+    margin-bottom: 100px;
+    color: white;
+    text-shadow: 1px 1px 0 #000;
+    
+
+}
+
+.SignUp h4{
+    width: 50%;
+    padding: 21px;
+    border: 3px black solid;
+}
