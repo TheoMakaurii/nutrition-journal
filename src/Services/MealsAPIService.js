@@ -34,7 +34,7 @@ getYourMeals(getMeals){
   },
 
 
-postMeal(newMeal, error){
+postMeal(setMeals, newMeal, error){
 
    return fetch(`${config.API_ENDPOINT}meals`,{
         method: "POST",
@@ -48,9 +48,9 @@ postMeal(newMeal, error){
          }
          return res.json();
      })
-    //  .then(meal =>{
-    //      setMeals(meal)
-    //  })
+     .then(meal =>{
+         setMeals(meal)
+     })
      .catch(error=>{
          console.log({error});
      })

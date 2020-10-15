@@ -7,7 +7,7 @@ export default function Meal(props) {
       <div className="Meal">
         <div className="meal_item">
           <div className="meal_name">
-             
+                
                 {props.meals}
           
           </div>

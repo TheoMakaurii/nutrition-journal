@@ -21,7 +21,7 @@ export default class LogMeal extends React.Component{
            protiens: p,
        })
        let error;
-       MealsApiService.postMeal(newMeal, error)
+       MealsApiService.postMeal(this.props.setMeals, newMeal, error)
        
  
       }
@@ -34,7 +34,7 @@ export default class LogMeal extends React.Component{
         let p =e.target.Protiens.value
         e.preventDefault()
         this.submitMeal(mn, cal, f, c, p)
-        // MealsApiService.getYourMeals(this.props.getMeals)
+        MealsApiService.getYourMeals(this.props.getMeals)
         this.props.history.push('/')
     }
     
@@ -44,6 +44,7 @@ export default class LogMeal extends React.Component{
 
         return(
             <div className= "formContainer">
+                
                 <form onSubmit={this.onSubmit} className="submitBox">
                     <label name='formLogMeal'>
                     <p>Log another meal: </p> 
