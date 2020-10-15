@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@500&family=Raleway&display=swap');
+
 .NavList{
     display: flex;
     flex-direction: row;
@@ -14,5 +16,6 @@ Nav a{
     text-shadow: 1px 1px 0 #000;
     font-weight: bolder;
     font-size: 21px;
+    font-family: 'Asap';
     
 }

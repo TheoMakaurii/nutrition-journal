@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@500&family=Raleway&display=swap');
 
 .formContainer{
     display: flex;
@@ -6,11 +7,12 @@
     padding: 14px;
 }
 .submitBox{
+    font-family: 'Asap';
     font-size: 35px;
     border: black 3px solid;
     background-color: limegreen;
     padding: 7px;
-    width: 56%;
+    width: 100%;
     align-self: center;
     
 }

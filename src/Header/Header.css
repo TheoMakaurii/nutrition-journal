@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@500&family=Raleway&display=swap');
+
 body{
     background-color: lightcyan;
   
@@ -18,7 +20,8 @@ body{
 .Header a{
    
     color: white;
-   
+    font-family: 'Asap';
+    font-size: x-large;
     text-decoration: none;
 }
 

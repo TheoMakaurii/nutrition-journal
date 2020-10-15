@@ -36,10 +36,11 @@ export default class LoginForm extends Component {
          password: password.value,
        })
          .then(res => {
+           console.log(res)
            user_name.value = ''
            password.value = ''
            TokenService.saveAuthToken(res.authToken)
-           TokenService.saveUser( res.user_id)
+           TokenService.saveUser( res.user_id, res.user_name)
            this.props.onLoginSuccess()
            MealsApiService.getYourMeals(this.props.getMeals)
            this.props.history.push('/HomePage')

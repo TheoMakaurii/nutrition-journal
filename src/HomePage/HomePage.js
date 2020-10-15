@@ -4,24 +4,19 @@ import Meal from '../Meal/Meal'
 // import MealsApiService from '../Services/MealsAPIService'
 import './HomePage.css'
 //import ApiContext from './ApiContext'
+import config from '../config'
 
 
 export default class HomePage extends Component {
-//   componentDidMount() {
-   
-//     setInterval(
-//     MealsApiService.getYourMeals(this.props.getMeals), 5000 
-//     )
-
-// }    
 
   render(){
+    let user_name=  window.localStorage.getItem(config.USER_NAME)
     // MealsApiService.getYourMeals(this.props.getMeals)
       return (
         
       <div className='HomePage'>
         <div className ="greeting-box">
-        <h1>Welcome back!</h1>
+        <h1>Welcome back {user_name}!</h1>
         <h2> I hope you're hungry! </h2>
         </div>
         {/* <div className='button-box'>
