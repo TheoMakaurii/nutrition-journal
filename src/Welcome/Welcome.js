@@ -19,13 +19,13 @@ export default function Welcome(){
             
             <p>Whatever your reasons for coming, we're happy you did. This app isnt about hating food, it's about LOVING food. We'll work with you to provide an easy to use platform that is ideal for tracking all of your meals in a judgment free environment.</p> 
             
-            <p>Remember!! We arent your doctors so we dont mind if you slip up every once in while. Just be honest and thorough!!! </p>
+            <p>Remember!! We aren't your doctors so we dont mind if you slip up every once in while. Just be honest and thorough!!! </p>
 
             <p>Simply 'sign up' for a new account and start tracking your meals today!</p>
 
-            <p>If you want to take our app for a spin before commiting then we have you covered! simply 'login' with the Username: 'Jenny', and the Password: '8675309!'.</p>
+            <p>If you want to take our app for a spin before signing up, that is no problem! Simply 'log in' with the Username: 'Jenny', and the Password: '8675309!'.</p>
 
-            <p>Stay hungry and have fun! </p>
+            <p>Stay hungry, and have fun! </p>
     
     </div>
     )
