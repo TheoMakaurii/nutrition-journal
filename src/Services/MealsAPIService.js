@@ -8,7 +8,7 @@ const MealsApiService = {
 
 getYourMeals(getMeals){
     let user_id=  window.localStorage.getItem(config.USER_ID)
-    
+
    return fetch(`${config.API_ENDPOINT}meals/${user_id}`,  {  
    
         headers: {
@@ -34,7 +34,7 @@ getYourMeals(getMeals){
   },
 
 
-postMeal(setMeals, newMeal, error){
+postMeal(newMeal, error){
 
    return fetch(`${config.API_ENDPOINT}meals`,{
         method: "POST",
@@ -48,9 +48,9 @@ postMeal(setMeals, newMeal, error){
          }
          return res.json();
      })
-     .then(meal =>{
-         setMeals(meal)
-     })
+    //  .then(meal =>{
+    //      setMeals(meal)
+    //  })
      .catch(error=>{
          console.log({error});
      })

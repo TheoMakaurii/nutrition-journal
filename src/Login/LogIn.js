@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 // import { Route, Redirect } from 'react-router-dom'
 import TokenService from '../Services/TokenServices';
 import AuthApiService from '../Services/auth-api-services'
-import MealsApiService from '../Services/MealsAPIService'
 import './Login.css'
 
 
@@ -14,19 +13,6 @@ export default class LoginForm extends Component {
 
       state = { error: null }
 
-    // handleSubmitBasicAuth = ev => {
-    //     ev.preventDefault()
-    //     const { user_name, password } = ev.target
-    
-    //     console.log('login form submitted')
-    //     console.log(user_name.value, password.value)
-    //     TokenService.saveAuthToken(
-    //     TokenService.makeBasicAuthToken(user_name.value, password.value)
-    //     )
-    //     user_name.value = ''
-    //     password.value = ''
-    //     this.props.onLoginSuccess()
-    //   }
 
      handleSubmitJwtAuth = ev => {
        ev.preventDefault()
@@ -44,7 +30,6 @@ export default class LoginForm extends Component {
            TokenService.saveAuthToken(res.authToken)
            TokenService.saveUser( res.user_id, res.user_name)
            this.props.onLoginSuccess()
-           MealsApiService.getYourMeals(this.props.getMeals)
            this.props.history.push('/HomePage')
          })
          .catch(res => {

@@ -23,7 +23,7 @@ export default function Welcome(){
 
             <p>Simply 'sign up' for a new account and start tracking your meals today!</p>
 
-            <p>If you want to take our app for a spin before commiting then we have you covered! simply 'login' with the Username: 'Jenny', and the Password: '8675309'.</p>
+            <p>If you want to take our app for a spin before commiting then we have you covered! simply 'login' with the Username: 'Jenny', and the Password: '8675309!'.</p>
 
             <p>Stay hungry and have fun! </p>
     
