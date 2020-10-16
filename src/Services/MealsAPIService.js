@@ -7,7 +7,12 @@ const MealsApiService = {
 
 
 getYourMeals(getMeals){
-    let user_id=  window.localStorage.getItem(config.USER_ID)
+  let  user_id=  window.localStorage.getItem(config.USER_ID)
+
+  if(user_id){
+   
+    
+
 
    return fetch(`${config.API_ENDPOINT}meals/${user_id}`,  {  
    
@@ -29,9 +34,9 @@ getYourMeals(getMeals){
           
       })
       .catch(error => {
-          console.error({error});
+          console.log({error});
       });
-  },
+ } },
 
 
 postMeal(setMeals, newMeal, error){

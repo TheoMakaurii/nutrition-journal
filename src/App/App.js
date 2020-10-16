@@ -52,13 +52,13 @@ export default class App extends Component {
 
 componentDidMount() {
 
-  
+  MealsApiService.getYourMeals(this.getMeals)
+
 
   this.onClick=e=>{
     e.preventDefault()
     let mealId = parseInt(e.target.id)
     console.log("mealId", parseInt(mealId))
-    
     MealsApiService.handleClickDelete(mealId, this.deleteMeal)
 
   }
@@ -66,7 +66,7 @@ componentDidMount() {
 
 
   render(){
-
+    
 
     let stateMeals = this.state.meals
     let meals = stateMeals.map((el)=>
