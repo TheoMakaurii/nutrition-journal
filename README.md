@@ -1,5 +1,5 @@
 
-A description of your app:
+Welcome!
 
 This is a handy mobile app to keep in your pocket. The app should appeal to a wide community of people; from diabetics to bodybuilders. Whether the user's goal is weight loss, weight gain, or weight control my app is an essential tool. New users are able to create password protected accounts to archive their daily meals and macro-nutrient consumption. The app is streamlined for an easy user experience. No ads. No clutter.
 #
