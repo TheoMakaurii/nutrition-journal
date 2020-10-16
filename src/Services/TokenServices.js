@@ -15,6 +15,7 @@ const TokenService = {
   clearAuthToken() {
     window.localStorage.removeItem(config.TOKEN_KEY)
     window.localStorage.removeItem(config.USER_ID)
+    window.localStorage.removeItem(config.USER_NAME)
   },
   hasAuthToken() {
     return !!TokenService.getAuthToken()
