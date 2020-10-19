@@ -32,4 +32,4 @@ You can dig into the server-side repo, here: (https://github.com/TheoMakaurii/nu
 #
 #
 #
---Please feel free to clone this git repository to your machine! Once the code has been cloned, just run the command 'npm install' to install the necessary dependancies/ libraries and then run 'npm start' to compile to code to your browser! Happy hacking!
+--Please feel free to clone this git repository to your machine! Once the code has been cloned, just run the command `npm install` to install the necessary dependancies/ libraries and then run `npm start` to compile to code to your browser! Happy hacking!
