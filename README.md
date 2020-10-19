@@ -21,9 +21,9 @@ This is a fullstack JavaScript app. The client was built using React and the ser
 ![Image of LoginPage]
 #
 <img width="369" alt="login screen" src="https://user-images.githubusercontent.com/63071655/96465453-fbdb1c80-11f6-11eb-8f7c-5888292b6651.png">
+
+
 #
-
-
 The client for this app is broken into several components, and make authorized fetch calls to the following URL 'https://gentle-brook-95294.herokuapp.com/api/'. The state is maintained and set in the App.js file, which is lowest common ancestor of the components that depend on its resources. User passwords are encrypted with bcrypt and stored as JWT on the server. Only the individual users can share credential info at their discretion. Authentication Tokens are held in local memory and cleared when the user signs out. This makes it possible to direct users to endpoints unique to their user-id. One user should not have access to another user's data without the appropriate login credentials.
 #
 You can dig into the server-side repo, here: (https://github.com/TheoMakaurii/nutrition-journal-server). Databases for the server where created and managed using PostgreSQL, and endpoints were fascillitated by the Express framework library. The current manifestation of this project depends on two database tables which directly reference eachother by a key relationship. 
