@@ -4,7 +4,7 @@ Welcome!
 This App is called "Let's Eat!", and it is a handy nutrition journal that fits in your pocket. The app should appeal to a wide community of people; from diabetics to bodybuilders. Whether the user's goal is weight loss, weight gain, or weight control my app is an essential tool. New users are able to create password protected accounts to archive their daily meals and macro-nutrient consumption. The app is streamlined for an easy user experience. No ads. No clutter.
 #
 ![Image of HomePage]
-(HomePage.png)
+(../master/HomePage.png)
 (https://github.com/TheoMakaurii/nutrition-journal/blob/master/HomePage.png?raw=true)
 #
 This app was designed to be extremely mobile-friendly and is therefore most appropriate for use on a smartphone or tablet. With this caveat in mind, you may demo the app on any browser. Follow the link (https://nutrition-journal.vercel.app/) to explore the interface. Everything should be fairly self-explainatory and easy to use. 
