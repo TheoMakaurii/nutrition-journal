@@ -1,13 +1,14 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import TokenService from '../Services/TokenServices'
-import './Nav.css'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import TokenService from '../Services/TokenServices';
+import './Nav.css';
 
 export default class Nav extends Component {
-    handleLogoutClick = () => {
+  handleLogoutClick = () => {
         TokenService.clearAuthToken()
-    }
-renderLogoutLink() {
+    };
+
+  renderLogoutLink() {
     return (
         <div className='Header__logged-in'>
           <Link
@@ -16,10 +17,10 @@ renderLogoutLink() {
             Logout
           </Link>
         </div>
-      )
-    }
+      );
+    };
 
-    renderLoginLink() {
+  renderLoginLink() {
         return (
           <div className='Header__not-logged-in'>
             <Link
@@ -32,22 +33,17 @@ renderLogoutLink() {
               Log in
             </Link>
           </div>
-        )
-      }
+      );
+    };
  
- render(){
+  render(){
     return( 
     <> 
-
-     
-        <ul className= "NavList">
-           <li> <Link to='/HomePage' > Home </Link> </li>
-
-           <li> <Link to='/LogMeal'> Log A New Meal</Link> </li>
-        </ul>
-
-
+      <ul className= "NavList">
+        <li> <Link to='/HomePage' > Home </Link> </li>
+        <li> <Link to='/LogMeal'> Log A New Meal</Link> </li>
+      </ul>
     </>
-    )
-}
-}
+    );
+  };
+};

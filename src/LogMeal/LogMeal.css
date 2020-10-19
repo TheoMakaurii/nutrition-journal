@@ -3,13 +3,13 @@
 .formContainer{
     display: flex;
     justify-content: center;
-    background-color: lightcyan;
+    background-color: lightgray;
     padding: 14px;
 }
 .submitBox{
     font-family: 'Asap';
     font-size: 35px;
-    border: black 3px solid;
+    border: white 3px solid;
     background-color: limegreen;
     padding: 7px;
     width: 100%;

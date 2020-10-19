@@ -1,8 +1,8 @@
 
-import React from 'react'
-import ReactDOM from 'react-dom'
-import Login from './LogIn'
-import { BrowserRouter } from 'react-router-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Login from './LogIn';
+import { BrowserRouter } from 'react-router-dom';
 
 
 
@@ -14,6 +14,6 @@ it('renders without crashing', () => {
       <Login />
     </BrowserRouter>,
     div
-  )
-  ReactDOM.unmountComponentAtNode(div)
-})
+  );
+  ReactDOM.unmountComponentAtNode(div);
+});

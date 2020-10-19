@@ -1,7 +1,5 @@
-import React from 'react'
-import './Welcome.css'
-// import { Link } from 'react-router-dom'
-// import Nav from '../Nav/Nav'
+import React from 'react';
+import './Welcome.css';
 
 
 export default function Welcome(){
@@ -28,5 +26,5 @@ export default function Welcome(){
             <p>Stay hungry, and have fun! </p>
     
     </div>
-    )
-}
+    );
+};

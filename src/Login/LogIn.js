@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-// import { Route, Redirect } from 'react-router-dom'
 import TokenService from '../Services/TokenServices';
-import AuthApiService from '../Services/auth-api-services'
-import MealsApiService from '../Services/MealsAPIService'
-import './Login.css'
+import AuthApiService from '../Services/auth-api-services';
+import MealsApiService from '../Services/MealsAPIService';
+import './Login.css';
 
 
 export default class LoginForm extends Component {
@@ -14,19 +13,6 @@ export default class LoginForm extends Component {
 
       state = { error: null }
 
-    // handleSubmitBasicAuth = ev => {
-    //     ev.preventDefault()
-    //     const { user_name, password } = ev.target
-    
-    //     console.log('login form submitted')
-    //     console.log(user_name.value, password.value)
-    //     TokenService.saveAuthToken(
-    //     TokenService.makeBasicAuthToken(user_name.value, password.value)
-    //     )
-    //     user_name.value = ''
-    //     password.value = ''
-    //     this.props.onLoginSuccess()
-    //   }
 
      handleSubmitJwtAuth = ev => {
        ev.preventDefault()
@@ -37,8 +23,7 @@ export default class LoginForm extends Component {
          user_name: user_name.value,
          password: password.value,
        })
-         .then(res => {
-           console.log(res)
+        .then(res => {
            user_name.value = ''
            password.value = ''
            TokenService.saveAuthToken(res.authToken)
@@ -47,11 +32,11 @@ export default class LoginForm extends Component {
            MealsApiService.getYourMeals(this.props.getMeals)
            this.props.history.push('/HomePage')
          })
-         .catch(res => {
+        .catch(res => {
            this.setState({ error: res.error })
-         })
+         });
          
-     }
+     };
 
     render(){
         const { error } = this.state
@@ -65,31 +50,37 @@ export default class LoginForm extends Component {
             </div>
             <div className='user_name'>
                 <label htmlFor='LoginForm__user_name'>
-                    User name
+                    Username
                 </label>
                 <input
                     name='user_name'
+                    placeholder= 'Jenny'
                     id='LoginForm__user_name'>
                 </input>
             </div>
-                <br/>
+
+            <br/>
+
             <div className='password'>
-                <label htmlFor='LoginForm__password'>
-                    Password
-                </label>
-                <input
-                    name='password'
-                    type='password'
-                    id='LoginForm__password'>
-                </input>
+              <label htmlFor='LoginForm__password'>
+                  Password
+              </label>
+              <input
+                name='password'
+                placeholder='8675309!'
+                type='password'
+                id='LoginForm__password'>
+              </input>
             </div>
-                <br/>         
+
+            <br/>    
+
             <button type="submit" id="submit-button">
-                SUBMIT
+              SUBMIT
             </button>
         </form>
       </main>
     );
-  }
-}
+  };
+};
   

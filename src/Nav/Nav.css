@@ -5,16 +5,15 @@
     flex-direction: row;
     justify-content: space-around;
     list-style: none;
-    border: black 3px solid;
+    border: white 3px solid;
     background-color: limegreen;
     
 }
 
 Nav a{
     text-decoration: none;
-    color: white;
-    text-shadow: 1px 1px 0 #000;
-    font-weight: bolder;
+    color: black;
+   
     font-size: 21px;
     font-family: 'Asap';
     

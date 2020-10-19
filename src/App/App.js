@@ -1,19 +1,17 @@
 import React, {Component} from 'react';
-// import { Route } from 'react-router-dom';
+
 import Welcome from '../Welcome/Welcome'
 import HomePage from '../HomePage/HomePage';
+import Header from '../Header/Header';
+import Nav from '../Nav/Nav';
+import LogMeal from '../LogMeal/LogMeal';
 import SignUp from '../SignUp/SignUp';
 import Login from '../Login/LogIn';
-import Header from '../Header/Header'
-import Nav from '../Nav/Nav'
-import LogMeal from '../LogMeal/LogMeal'
-//import config from './config'
-// import ApiContext from './ApiContext'
 
-import MealsApiService from '../Services/MealsAPIService'
+import PublicRoute from '../Utils/PublicOnly';
+import PrivateRoute from '../Utils/PrivateOnly';
 
-import PublicRoute from '../Utils/PublicOnly'
-import PrivateRoute from '../Utils/PrivateOnly'
+import MealsApiService from '../Services/MealsAPIService';
 
 
 
@@ -23,27 +21,26 @@ export default class App extends Component {
     meals:[],
     error: null,
     
-  }
+  };
 
   getMeals =meals =>{
     this.setState({
       meals
-    })
-  }
+    });
+  };
 
   setMeals= meal => {
     this.setState({
       meals:[meal, ...this.state.meals],
       error: null
-    }) 
-  }
+    }); 
+  };
 
   deleteMeal = meal => {
     
     
     this.setState({
         meals: this.state.meals.filter(el =>{ 
-          console.log("el.id", el.id)
           return el.id !== meal})
     });
 };
@@ -58,11 +55,10 @@ componentDidMount() {
   this.onClick=e=>{
     e.preventDefault()
     let mealId = parseInt(e.target.id)
-    console.log("mealId", parseInt(mealId))
     MealsApiService.handleClickDelete(mealId, this.deleteMeal)
 
-  }
-}  
+  };
+};  
 
 
   render(){
@@ -81,10 +77,9 @@ componentDidMount() {
           <li>Carbs: {el.carbs}</li>
           <li>Protien: {el.protiens}</li>
           <br/>
-          {/* <p>{el.date_published}</p> */}
         </ul>
     </div>
-    )
+    );
    
     return (
 
@@ -119,7 +114,7 @@ componentDidMount() {
 
     </div>
  
-  )
-  }
-}
+    );
+  };
+};
 

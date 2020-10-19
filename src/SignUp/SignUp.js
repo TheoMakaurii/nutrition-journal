@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import { Input} from '../Utils/Utils'
-import AuthApiService from '../Services/auth-api-services'
-import './SignUp.css'
-export default class RegistrationForm extends Component {
+import React, { Component } from 'react';
+import { Input} from '../Utils/Utils';
+import AuthApiService from '../Services/auth-api-services';
+import './SignUp.css';
 
+export default class RegistrationForm extends Component {
     static defaultProps = {
         onRegistrationSuccess: () => {}
     }
@@ -13,9 +13,7 @@ export default class RegistrationForm extends Component {
     handleSubmit = ev => {
         ev.preventDefault()
         const { full_name, user_name, password,  } = ev.target
-    //calories, fats, carbs, protiens
-        console.log('registration form submitted')
-        console.log({ full_name, user_name, password })
+        //calories, fats, carbs, protiens will be added in future versions
 
         this.setState({erro:null})
         AuthApiService.postUser({
@@ -34,24 +32,31 @@ export default class RegistrationForm extends Component {
             this.props.onRegistrationSuccess()
             this.props.history.push('/login')
           })
-          .catch(res => {
+        .catch(res => {
             this.setState({ error: res.error })
-          })
+        })
       }
 
 
     render(){
         const { error } = this.state
+
     return (
-      <main className='SignUp'>
-        <h4>Signing up is easy! Take a minute to think up a unique username and password combo and you should be good to go!</h4>
-        <form className='RegistrationForm' onSubmit={this.handleSubmit}>
+    <main className='SignUp'>
+        <h4>
+            Signing up is easy! Take a minute to think up a unique username and password combo and you should be good to go!
+        </h4>
+        <form 
+            className='RegistrationForm' 
+            onSubmit={this.handleSubmit}>
+
             <div role='alert'>
                 {error && <p className='red'>{error}</p>}
             </div>
 
             <div className='full_name'>
-            <label htmlFor='RegistrationForm__full_name'> Full Name  </label>
+            <label htmlFor='RegistrationForm__full_name'> 
+            Full Name  </label>
         
             <Input
                 name='full_name'
@@ -60,10 +65,14 @@ export default class RegistrationForm extends Component {
                 required
                 id='RegistrationForm__full_name'>
             </Input>
+
             </div>
-            <br/>   
+
+            <br/>
+
             <div className='user_name'>
-                <label htmlFor='RegistrationForm__user_name'>User Name  </label>
+                <label htmlFor='RegistrationForm__user_name'>
+                    Username  </label>
                 <Input
                     name='user_name'
                     placeholder= 'Jenny'
@@ -77,15 +86,19 @@ export default class RegistrationForm extends Component {
                 <label htmlFor='RegistrationForm__password'> Password  </label>
                 <Input
                     name='password'
-                    placeholder='8675309'
+                    placeholder='8675309!'
                     type='password'
                     required
                     id='RegistrationForm__password'>
                 </Input>
             </div> 
                 <br/>    
-                {/* <h4> Next we need to think of your nutrition goals? If your already have some numbers in mind, GREAT! If not don't worry about it. Put in what feels right, and then consult with a health specialist to come up with more concrete goals. We can always adjust these numbers later!</h4> */}
-{/*     
+                {/* 
+                
+               !!! Too be added in future versions 
+
+                <h4> Next we need to think of your nutrition goals? If your already have some numbers in mind, GREAT! If not don't worry about it. Put in what feels right, and then consult with a health specialist to come up with more concrete goals. We can always adjust these numbers later!</h4> 
+    
                 <p>How many...</p>
                 <label htmlFor="calories"/>
                 <input type="number" id="calories" name='calories' placeholder="Calories?" required/>    
@@ -100,9 +113,12 @@ export default class RegistrationForm extends Component {
                 <input type="number" id="protiens" name="protiens" placeholder="Protiens?" required/> 
                 <br/> */}
 
-                <button type="submit" id="submit-button">SUBMIT</button>
-            </form>
+            <button type="submit" id="submit-button">
+                SUBMIT
+            </button>
+
+        </form>
       </main>
     );
-  }
-}
+  };
+};

@@ -33,6 +33,7 @@
     ]
   },
   "devDependencies": {
+    "eslint-plugin-react": "^7.21.4",
     "react-test-renderer": "^16.14.0"
   }
 }

@@ -1,6 +1,5 @@
-import React from 'react'
-// import MealsApiService from '../Services'
-import './Meal.css'
+import React from 'react';
+import './Meal.css';
 
 export default function Meal(props) {
     return (
@@ -13,5 +12,5 @@ export default function Meal(props) {
           </div>
         </div>      
       </div>
-    ) 
-  }
+    ); 
+  };

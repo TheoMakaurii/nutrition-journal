@@ -1,8 +1,8 @@
 
-import React from 'react'
-import ReactDOM from 'react-dom'
-import Welcome from './Welcome'
-import { BrowserRouter } from 'react-router-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Welcome from './Welcome';
+import { BrowserRouter } from 'react-router-dom';
 
 
 
@@ -14,6 +14,6 @@ it('renders without crashing', () => {
       <Welcome />
     </BrowserRouter>,
     div
-  )
-  ReactDOM.unmountComponentAtNode(div)
-})
+  );
+  ReactDOM.unmountComponentAtNode(div);
+});

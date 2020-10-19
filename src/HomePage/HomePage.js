@@ -1,16 +1,11 @@
 import React, {Component} from 'react';
-import Meal from '../Meal/Meal'
-import './HomePage.css'
-import config from '../config'
+import Meal from '../Meal/Meal';
+import './HomePage.css';
+import config from '../config';
 
 
 export default class HomePage extends Component {
  
-
-
-
-
-
 render(){
 
   let user_name=  window.localStorage.getItem(config.USER_NAME)
@@ -27,5 +22,5 @@ render(){
     </div>
 
     );
-  }
-}
+  };
+};
