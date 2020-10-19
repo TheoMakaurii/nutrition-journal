@@ -8,7 +8,7 @@ Welcome!
 This App is called "Let's Eat!", and it is a handy nutrition journal that fits in your pocket. The app should appeal to a wide community of people; from diabetics to bodybuilders. Whether the user's goal is weight loss, weight gain, or weight control my app is an essential tool. New users are able to create password protected accounts to archive their daily meals and macro-nutrient consumption. The app is streamlined for an easy user experience. No ads. No clutter.
 #
 ![Image of HomePage]
-#
+
 <img width="376" alt="HomePage" src="https://user-images.githubusercontent.com/63071655/96465120-9ab34900-11f6-11eb-86c4-cbdf45ba0b38.png">
 
 #
