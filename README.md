@@ -8,6 +8,8 @@ This App is called "Let's Eat!", and it is a handy nutrition journal that fits i
 #
 This app was designed to be extremely mobile-friendly and is therefore most appropriate for use on a smartphone or tablet. With this caveat in mind, you may demo the app on any browser. Follow the link (https://nutrition-journal.vercel.app/) to explore the interface. Everything should be fairly self-explainatory and easy to use. 
 #
+![Image of LogMealPage]
+(https://github.com/TheoMakaurii/nutrition-journal/blob/master/LogMeal.png?raw=true)
 #
 This is a fullstack JavaScript app. The client was built using React and the server was designed using Node. 
 #
