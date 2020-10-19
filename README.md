@@ -1,3 +1,4 @@
+Follow the link (https://nutrition-journal.vercel.app/) to explore the interface. 
 
 Welcome!
 
@@ -8,7 +9,7 @@ This App is called "Let's Eat!", and it is a handy nutrition journal that fits i
 <img width="376" alt="HomePage" src="https://user-images.githubusercontent.com/63071655/96465120-9ab34900-11f6-11eb-86c4-cbdf45ba0b38.png">
 
 #
-This app was designed to be extremely mobile-friendly and is therefore most appropriate for use on a smartphone or tablet. With this caveat in mind, you may demo the app on any browser. Follow the link (https://nutrition-journal.vercel.app/) to explore the interface. Everything should be fairly self-explainatory and easy to use. 
+This app was designed to be extremely mobile-friendly and is therefore most appropriate for use on a smartphone or tablet. With this caveat in mind, you may demo the app on any browser. Everything should be fairly self-explainatory and easy to use. 
 #
 ![Image of LogMealPage]
 #
